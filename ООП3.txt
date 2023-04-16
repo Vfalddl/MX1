@@ -1,0 +1,59 @@
+Задание 1
+class BeeElephant:
+  def __init__(self,bee,elephant):
+    self.bee = bee
+    self.elephant = elephant
+  def fly(self):
+    if self.bee > self.elephant:
+      return True
+    else:
+      return False
+  def trumpet(self):
+    if self.elephant > self.bee:
+      return "tu-tu-doo-doo!"
+    else:
+      return "wzzzzz"
+  def eat(self, meal, value):
+    self.meal = input()
+    self.value = int(input())
+    if self.meal == "nectar":
+      self.bee += self.value
+      self.elephant -= self.value
+    elif self.meal == "grass":
+      self.bee -= self.value
+      self.elephant += self.value
+    if self.elephant>100:
+        self.elephant = 100
+    if self.bee>100:
+        self.bee = 100
+    if self.elephant<0:
+        self.elephant = 0
+    if self.bee<0:
+        self.bee = 0
+  def get_parts(self):
+    return self.bee , self.elephant
+
+be = BeeElephant(int(input()), int(input()))
+print(be.fly())
+print(be.trumpet())
+be.eat('nectar', 4)
+print(be.get_parts())  
+
+Задание 2 
+class Worker(object):
+  def __init__(self, name, post, experience):
+    self.name = name
+    self.post = post
+    self.experience = experience
+  def print_info(self):
+    print (f'Имя:{self.name}')
+    print (f'Должность:{self.post}')
+    if self.experience%10 in [2, 3, 4]:
+        return f'Стаж: {self.experience} год'
+   if self.experience%10 in [5, 6, 7, 8, 9, 0, 11, 12, 13, 14]:
+        return f'Стаж: {self.experience} лет'
+    elif self.experience%10 ==1:
+        return f'Стаж: {self.experience} год'
+p = Worker(input(), input(), int(input()))
+print(p.print_info())
+ 

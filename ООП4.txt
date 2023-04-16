@@ -1,0 +1,15 @@
+Задание 4 
+class Post:
+  def _init_(self, nick, time, likes, message, comments):
+    self.nick = nick
+    self.time = time
+    self.likes = likes
+    self.message = message
+    self.comments = comments
+  def like(self): 
+    self.likes+=1
+  def  _str_(self):
+    return f'Пользователь {self.nick} выложил пост в {self.time} с текстом "{self.message}". Набрал {self.likes} лайков. Список комментариев к посту'
+post1 = Post(input(), input(), int(input()),input(), input())
+print(post1.like())   
+print(post1)
